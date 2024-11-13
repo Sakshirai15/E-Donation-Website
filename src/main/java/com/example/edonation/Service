@@ -1,0 +1,40 @@
+package com.example.edonation.service;
+
+import com.example.edonation.dao.ProductDAO;
+import com.example.edonation.model.Product;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ProductService {
+
+    @Autowired
+    private ProductDAO productDAO;
+
+    public List<Product> getAllProducts() {
+        return productDAO.findAll();
+    }
+
+    public Optional<Product> getProductById(Long id) {
+        return productDAO.findById(id);
+    }
+
+    public List<Product> getProductsByName(String name) {
+        return productDAO.findByName(name);
+    }
+
+    public List<Product> getProductsByCondition(String condition) {
+        return productDAO.findByCondition(condition);
+    }
+
+    public Product saveProduct(Product product) {
+        return productDAO.save(product);
+    }
+
+    public void deleteProduct(Long id) {
+        productDAO.deleteById(id);
+    }
+}
