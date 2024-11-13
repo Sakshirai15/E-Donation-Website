@@ -1,6 +1,6 @@
-CREATE DATABASE Edonationwebsite; 
+CREATE DATABASE E_donation_website; 
 
-USE Edonationwebsite;
+USE E_donation_website;
   
 --1. Users Table
 CREATE TABLE Users (
